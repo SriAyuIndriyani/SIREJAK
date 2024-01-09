@@ -59,29 +59,12 @@
                                         {{ $item->prodi }}
                                     </td>
                                     <td>
-                                       <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                Download
-                            </button>
-                            
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Silahkan Pilih Versi Download :</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body d-flex justify-content-center">
-                                       <a href="/download-excel/{{$item->id}}" class="btn btn-primary mr-2">Excel</a>
-                                       <a href="/download-cv/{{$item->id}}" class="btn btn-primary">Curicullum Vitae</a>
-                                    </div>
-                                    
-                                </div>
-                                </div>
-                            </div>    
+                                        <a href="/download-excel/{{$item->id}}" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-file-excel"></i> Excel
+                                        </a>
+                                        <a href="/download-cv/{{$item->id}}" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-file-pdf"></i> PDF
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
