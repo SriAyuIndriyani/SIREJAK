@@ -2,6 +2,9 @@
 /**
  * Untuk Form Login
  */
+
+use App\Http\Controllers\Direksi\DataDosenDireksiControllers;
+use App\Http\Controllers\Direksi\ProfileDireksiControllers;
 use App\Http\Controllers\Dosen\DownloadControllers;
 use App\Http\Controllers\Dosen\FormBukuControllers;
 use App\Http\Controllers\Dosen\FormKompetensiDosenControllers;
@@ -16,6 +19,7 @@ use App\Http\Controllers\Dosen\FormHibahDosenControllers;
 use App\Http\Controllers\Dosen\FormJabatanDosenControllers;
 use App\Http\Controllers\Dosen\FormMengajarDosenControllers;
 use App\Http\Controllers\Dosen\FormPatenDosenControllers;
+use App\Http\Controllers\Dosen\FormPembicaraControllers;
 use App\Http\Controllers\Dosen\FormPendidikanDosenControllers;
 use App\Http\Controllers\Dosen\FormPenelitianDosenControllers;
 use App\Http\Controllers\Dosen\FormPengabdianDosenControllers;
@@ -70,6 +74,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/daftar-prodi', [ProdiControllers::class, 'index']);
         Route::get('/daftar-prodi/create', [ProdiControllers::class, 'create']);
         Route::post('/daftar-prodi/createData', [ProdiControllers::class, 'createData']);
+        Route::get('/daftar-prodi/update/{id_prodi}', [ProdiControllers::class, 'update']);
+        Route::put('/daftar-prodi/updateData/{id_prodi}', [ProdiControllers::class, 'updateData']);
+        Route::get('/daftar-prodi/{id_prodi}/delete', [ProdiControllers::class, 'delete']);
 
         // Untuk Tampilan data dosen
         Route::get('/data-dosen', [DataDosenControllers::class, 'index']);
@@ -92,6 +99,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/logout', [LoginControllers::class, 'logout']);
     });
 
+    
 
     Route::middleware('check.user:2')->group(function () {
         /**
@@ -193,6 +201,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/form-kompetensi-dosen/update/{id_kompetensi}', [FormKompetensiDosenControllers::class, 'update']);
         Route::put('/form-kompetensi-dosen/updateData/{id_kompetensi}', [FormKompetensiDosenControllers::class, 'updateData']);
         Route::get('/form-kompetensi-dosen/delete/{id_kompetensi}', [FormKompetensiDosenControllers::class, 'delete']);
+        
+        // Untuk tampilan pembicara dosen
+        Route::get('/form-pembicara-dosen', [FormPembicaraControllers::class, 'index']);
+        Route::get('/form-pembicara-dosen/create', [FormPembicaraControllers::class, 'create']);
+        Route::post('/form-pembicara-dosen/createData', [FormPembicaraControllers::class, 'createData']);
+        Route::get('/form-pembicara-dosen/update/{id_pembicara}', [FormPembicaraControllers::class, 'update']);
+        Route::put('/form-pembicara-dosen/updateData/{id_pembicara}', [FormPembicaraControllers::class, 'updateData']);
+        Route::get('/form-pembicara-dosen/delete/{id_pembicara}', [FormPembicaraControllers::class, 'delete']);
 
 
         Route::get('/unduh-cv', [DownloadControllers::class, 'index']);
@@ -202,6 +218,26 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/logout', [LoginControllers::class, 'logout']);
     });
+// Tampilan Untuk Direksi
+    Route::middleware('check.user:3')->group(function () {
+        /**
+         * Untuk Tampilan Direksi
+         */
+        Route::get('/profile-direksi', [ProfileDireksiControllers::class, 'index']);
+        Route::get('/update-user-direksi/{id}', [ProfileDireksiControllers::class, 'updateuser']);
+        Route::put('/update-akun-direksi/{id}/updateuserData', [ProfileDireksiControllers::class, 'updateuserData']);
+
+        // Untuk Tampilan data dosen
+        Route::get('/data-dosen-direksi', [DataDosenDireksiControllers::class, 'index']);
+        Route::get('/search-dosen-direksi', [DataDosenDireksiControllers::class, 'search'])->name('search-dosen-direksi');
+        Route::get('/download-excel-direksi/{id}', [DataDosenDireksiControllers::class, 'check']);
+        Route::post('/download-excel-direksi/download', [DataDosenDireksiControllers::class, 'downloadCsv'])->name('downloadCsv');
+        Route::get('/download-cv-direksi/{id}', [DataDosenDireksiControllers::class, 'checkCV']);
+        Route::post('/download-cv-direksi/downloadPDF', [DataDosenDireksiControllers::class, 'downloadPDF'])->name('downloadCsv');
+     
+        Route::get('/logout', [LoginControllers::class, 'logout']);
+    });
+
 });
 
 /**

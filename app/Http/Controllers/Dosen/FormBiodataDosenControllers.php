@@ -52,6 +52,8 @@ class FormBiodataDosenControllers extends Controller
             'agama' => $request->input('agama'),
             'email' => $request->input('email'),
             'no_hp' => $request->input('no_hp'),
+            'jabfung' => $request->input('jabfung'),
+            
         ];
 
         if ($request->hasFile('photo')) {
@@ -101,6 +103,7 @@ class FormBiodataDosenControllers extends Controller
         $biodata->agama = $request->input('agama');
         $biodata->email = $request->input('email');
         $biodata->no_hp = $request->input('no_hp');
+        $biodata->jabfung = $request->input('jabfung');
 
         if ($request->hasFile('photo')) {
             $foto = $request->file('photo');

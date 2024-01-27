@@ -47,6 +47,30 @@
                             </tr>
                             <tr>
                                 <td>
+                                    Jabatan Fungsional
+                                </td>
+                                <td>
+                                    <select class="custom-select" name="jabfung">
+                                        <option selected disabled>Pilih Jabatan Fungsional</option>
+                                        <option value="Tenaga Pendidik"
+                                            {{ $biodata->jabfung == 'Tenaga Pendidik' ? 'selected' : '' }}>Tenaga Pendidik</option>
+                                        <option value="Asisten Ahli 100"
+                                            {{ $biodata->jabfung == 'Asisten Ahli 100' ? 'selected' : '' }}>Asisten Ahli (100)</option>
+                                        <option value="Asisten Ahli 150"
+                                            {{ $biodata->jabfung == 'Asisten Ahli 150' ? 'selected' : '' }}>Asisten Ahli (150)</option>
+                                        <option value="Lektor 200"
+                                            {{ $biodata->jabfung == 'Lektor 200' ? 'selected' : '' }}>Lektor (200)</option>
+                                        <option value="Lektor 300"
+                                            {{ $biodata->jabfung == 'Lektor 300' ? 'selected' : '' }}>Lektor (300)</option>
+                                        <option value="Lektor Kepala"
+                                            {{ $biodata->jabfung == 'Lektor Kepala' ? 'selected' : '' }}>Lektor Kepala</option>
+                                        <option value="Guru Besar"
+                                            {{ $biodata->jabfung == 'Guru Besar' ? 'selected' : '' }}>Guru Besar</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     NIDN
                                 </td>
                                 <td>

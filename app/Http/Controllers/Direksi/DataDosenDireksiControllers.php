@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin;
+namespace App\Http\Controllers\Direksi;
 
 use App\Exports\EksporCSV;
 use App\Models\KompetensiModels;
@@ -24,7 +24,8 @@ use Illuminate\Http\Request;
 use PDF;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class DataDosenControllers extends Controller
+
+class DataDosenDireksiControllers extends Controller
 {
     function index()
     {
@@ -32,7 +33,7 @@ class DataDosenControllers extends Controller
         $user = UsersModels::select('tb_user.*', 'tb_prodi.prodi')
             ->join('tb_prodi', 'tb_user.id_prodi', '=', 'tb_prodi.id_prodi')
             ->get();
-        return view('superadmin.datadosen.index', compact('user', 'prodi'));
+        return view('direksi.datadosen.index', compact('user', 'prodi'));
     }
 
     function check($id)
@@ -77,7 +78,7 @@ class DataDosenControllers extends Controller
         $pembicara = PembicaraModels::select('tb_pembicara.*')
             ->where('id', $id)
             ->get();
-        return view('superadmin.datadosen.checkdata', compact('biodata', 'pendidikan', 'jabatan', 'kompetensi', 'mengajar', 'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki','pembicara','id'));
+        return view('direksi.datadosen.checkdata', compact('biodata', 'pendidikan', 'jabatan', 'kompetensi', 'mengajar', 'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki','pembicara','id'));
     }
 
     public function downloadCsv(Request $request)
@@ -174,7 +175,7 @@ class DataDosenControllers extends Controller
         $pembicara = PembicaraModels::select('tb_pembicara.*')
             ->where('id', $id)
             ->get();
-        return view('superadmin.datadosen.checkdataCV', compact('biodata', 'pendidikan', 'jabatan', 'kompetensi', 'mengajar', 'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki','pembicara','id'));
+        return view('direksi.datadosen.checkdataCV', compact('biodata', 'pendidikan', 'jabatan', 'kompetensi', 'mengajar', 'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki','pembicara','id'));
     }
 
     public function downloadPDF(Request $request)
@@ -228,10 +229,8 @@ class DataDosenControllers extends Controller
         $patendanHaKi = PatenHakiModels::whereIn('id_patendanhaki', $selectedPatendanHaKiIds)->get();
 
         $pembicara = PembicaraModels::whereIn('id_pembicara', $selectedPembicaraIds)->get();
-
-
-        
-        $pdf = PDF::loadView('superadmin.datadosen.pdf', compact('biodata', 'pendidikan','jabatan','kompetensi', 'mengajar',
+                
+        $pdf = PDF::loadView('direksi.datadosen.pdf', compact('biodata', 'pendidikan','jabatan','kompetensi', 'mengajar',
         'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanHaKi','pembicara'));
         return $pdf->download('cv.pdf');
     }
@@ -254,6 +253,6 @@ class DataDosenControllers extends Controller
         $user = $query->get();
         $prodi = ProdiModels::all();
 
-        return view('superadmin.datadosen.index', compact('user', 'prodi'));
+        return view('direksi.datadosen.index', compact('user', 'prodi'));
     }
 }

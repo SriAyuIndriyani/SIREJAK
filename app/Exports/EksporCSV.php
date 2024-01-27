@@ -18,6 +18,7 @@ class EksporCSV implements WithMultipleSheets
     protected $selectedHibahIds;
     protected $selectedBukuIds;
     protected $selectedPatenDanHakiIds;
+    protected $selectedPembicaraIds;
 
 
     public function __construct($models)
@@ -34,6 +35,7 @@ class EksporCSV implements WithMultipleSheets
         $hibahcollection = collect($models['hibah']['data']);
         $bukucollection = collect($models['buku']['data']);
         $patendanhakicollection = collect($models['patendanhaki']['data']);
+        $pembicaracollection = collect($models['pembicara']['data']);
        
         $this->selectedBiodataIds = $biodatacollection->pluck('id_biodata')->toArray();
         $this->selectedPendidikanIds = $pendidikanCollection->pluck('id_pendidikan')->toArray();
@@ -47,6 +49,7 @@ class EksporCSV implements WithMultipleSheets
         $this->selectedHibahIds = $hibahcollection->pluck('id_hibah')->toArray();
         $this->selectedBukuIds = $bukucollection->pluck('id_buku')->toArray();
         $this->selectedPatenDanHakiIds = $patendanhakicollection->pluck('id_patendanhaki')->toArray();
+        $this->selectedPembicaraIds = $pembicaracollection->pluck('id_pembicara')->toArray();
     }
 
     public function sheets(): array
@@ -88,6 +91,9 @@ class EksporCSV implements WithMultipleSheets
 
         $patendanhaki = new PatenDanHakiSheet($this->selectedPatenDanHakiIds,'Paten Dan Haki');
         $sheets[]=$patendanhaki;
+
+        $pembicara = new PembicaraSheet($this->selectedPembicaraIds,'Pembicara');
+        $sheets[]=$pembicara;
 
         return $sheets;
     }

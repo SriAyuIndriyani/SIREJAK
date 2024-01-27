@@ -1,4 +1,4 @@
-@extends('superadmin.template.index')
+@extends('direksi.template.index')
 @section('content')
     <div class="container-fluid">
         <!-- Page Heading -->
@@ -8,7 +8,7 @@
 
         <div class="d-sm-flex align-items-center justify-content-between mb-2">
             <nav class="navbar navbar-light bg-light">
-                <form class="form-inline" method="GET" action="{{ route('search-dosen') }}">
+                <form class="form-inline" method="GET" action="{{ route('search-dosen-direksi') }}">
                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Masukkan nama atau NRP"
                         aria-label="Search">
                     <select class="custom-select mr-sm-2" name="id_prodi">
@@ -59,10 +59,10 @@
                                         {{ $item->prodi }}
                                     </td>
                                     <td>
-                                        <a href="/download-excel/{{$item->id}}" class="btn btn-sm btn-primary">
+                                        <a href="/download-excel-direksi/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fas fa-file-excel"></i> Excel
                                         </a>
-                                        <a href="/download-cv/{{$item->id}}" class="btn btn-sm btn-primary">
+                                        <a href="/download-cv-direksi/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fas fa-file-pdf"></i> PDF
                                         </a>
                                     </td>

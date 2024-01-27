@@ -34,6 +34,11 @@ class LoginControllers extends Controller
             elseif ($user->id_role == 2) {
                 session(['user' => $user]);
                 return redirect('/profile-dosen');
+            }
+            // Direksi
+            elseif ($user->id_role == 3) {
+                session(['user' => $user]);
+                return redirect('/profile-direksi');
             } else {
                 Auth::logout();
                 Session::forget('user');

@@ -288,6 +288,27 @@
                       </div> 
                        @endforeach
                    </div>
+                   
+                   <label for="" class="font-weight-bold">Pembicara</label>
+                   <div class="container">
+                       <div class="row">
+                       </div>
+                       @foreach ($pembicara as $item)
+                       <div class="card mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox" aria-label="Checkbox for following text input" value="{{$item->id_pembicara}}" name="selected_pembicara_ids[]">
+                                </div>
+                             </div>
+                             <span class="form-control">{{$item->judul_materi}}</span>
+                         </div>
+                        <div class="card-body">
+                            {{$item->tanggal_kegiatan->format('d F Y')}}
+                        </div>
+                      </div> 
+                       @endforeach
+                   </div>
 
                </form>
            </div>

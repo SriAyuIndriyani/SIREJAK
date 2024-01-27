@@ -10,6 +10,7 @@ class ProdiModels extends Model
     use HasFactory;
 
     protected $table = ('tb_prodi');
+    protected $primaryKey = "id_prodi";
     protected $guard = [];
 
     protected $fillable = [

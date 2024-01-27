@@ -1,4 +1,4 @@
-@extends('superadmin.template.index')
+@extends('direksi.template.index')
 @section('content')
 <div class="container-fluid">
     
@@ -6,7 +6,7 @@
     <div class="row">
         <div class="card-body">
             <div class="table-responsive">
-                <form action="/download-cv/downloadPDF" method="POST">
+                <form action="/download-cv-direksi/downloadPDF" method="POST">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -17,7 +17,7 @@
                         </div>
                    </div>
                    @csrf
-                   <label for="" class="font-weight-bold">Biodata</label>
+                   <label for="">Biodata</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -32,7 +32,7 @@
                                </div>
                        @endforeach
                    </div>
-                   <label for="" class="font-weight-bold">Pendidikan</label>
+                   <label for="">Pendidikan</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -56,7 +56,7 @@
                        @endforeach
                    </div>
                    
-                   <label for="" class="font-weight-bold">Pengalaman Jabatan</label>
+                   <label for="">Pengalaman Jabatan</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -78,7 +78,7 @@
                        @endforeach
                    </div>
                    
-                   <label for="" class="font-weight-bold">Kompetensi</label>
+                   <label for="">Kompetensi</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -99,7 +99,7 @@
                        @endforeach
                    </div>
                   
-                   <label for="" class="font-weight-bold">Pengalaman Mengajar</label>
+                   <label for="">Pengalaman Mengajar</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -117,7 +117,7 @@
                   
                   
                   
-                   <label for="" class="font-weight-bold">Seminar / Pelatihan</label>
+                   <label for="">Seminar / Pelatihan</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -140,7 +140,7 @@
                        @endforeach
                    </div>
                   
-                   <label for="" class="font-weight-bold">Pengalaman Penelitian</label>
+                   <label for="">Pengalaman Penelitian</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -165,7 +165,7 @@
                        @endforeach
                    </div>
                   
-                   <label for="" class="font-weight-bold">Pengalaman Publikasi</label>
+                   <label for="">Pengalaman Publikasi</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -190,7 +190,7 @@
                        @endforeach
                    </div>
                   
-                   <label for="" class="font-weight-bold">Pengalaman Pengabdian</label>
+                   <label for="">Pengalaman Pengabdian</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -213,7 +213,7 @@
                        @endforeach
                    </div>
                   
-                   <label for="" class="font-weight-bold">Pengalaman Hibah</label>
+                   <label for="">Pengalaman Hibah</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -236,7 +236,7 @@
                        @endforeach
                    </div>
                    
-                   <label for="" class="font-weight-bold">Buku</label>
+                   <label for="">Buku</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -264,7 +264,7 @@
                    </div>
                   
                   
-                   <label for="" class="font-weight-bold">Paten / HaKi</label>
+                   <label for="">Paten / HaKi</label>
                    <div class="container">
                        <div class="row">
                        </div>
@@ -284,7 +284,7 @@
                       </div> 
                        @endforeach
                    </div>
-                   
+
                    <label for="" class="font-weight-bold">Pembicara</label>
                    <div class="container">
                        <div class="row">
@@ -305,7 +305,7 @@
                       </div> 
                        @endforeach
                    </div>
-
+                   
                </form>
            </div>
        </div>

@@ -35,10 +35,10 @@
                     <tbody>
                         @foreach ($join as $item)
                         <tr>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->email}}</td>
-                            <td>{{$item->password}}</td>
-                            <td>{{$item->role}}</td>
+                            <td style="color: black;">{{$item->name}}</td>
+                            <td style="color: black;">{{$item->email}}</td>
+                            <td style="color: black;">{{$item->password}}</td>
+                            <td style="color: black;">{{$item->role}}</td>
                             <td>
                                 <a href="/user/{{$item->id}}/update" class="btn btn-success btn-sm rounded-0">
                                     <i class="fa fa-edit"></i>

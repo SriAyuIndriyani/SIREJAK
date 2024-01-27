@@ -11,7 +11,7 @@
     <link rel="icon" href="{{asset('/img/polkam.png')}}" type="image/x-icon">
     <title>SIREJAK - Politeknik Kampar</title>
 
-    @include('dosen.template.css')
+    @include('direksi.template.css')
 
 </head>
 
@@ -21,7 +21,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('dosen.template.sidebar')
+        @include('direksi.template.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -31,7 +31,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('dosen.template.header')
+                @include('direksi.template.header')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -40,6 +40,8 @@
 
             </div>
             <!-- End of Main Content -->
+
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -81,7 +83,7 @@
         </div>
     </div>
 
-    @include('dosen.template.javascript')
+    @include('direksi.template.javascript')
 
 </body>
 

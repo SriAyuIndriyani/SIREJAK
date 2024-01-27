@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin;
+namespace App\Http\Controllers\Direksi;
 
 use App\Http\Controllers\Controller;
 use App\Models\BiodataModels;
-use App\Models\JabatanModels;
+use Illuminate\Http\Request;
 use App\Models\ProdiModels;
 use App\Models\UsersModels;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use Auth;
-
-class ProfileSuperAdminControllers extends Controller
+class ProfileDireksiControllers extends Controller
 {
-
     function index(){
         $oke=Auth::id();
         // Get all ProdiModels
@@ -57,13 +54,11 @@ class ProfileSuperAdminControllers extends Controller
                 'total_jabfung' => BiodataModels::where('jabfung', $item->jabfung)->count(),
             ];
         }
-        return view('superadmin.profile.index', compact('prodi', 'jabfung','mergedData','mergedDataJabfung','oke'));
+        return view('direksi.profile.index', compact('prodi','jabfung', 'mergedData','mergedDataJabfung','oke'));
     }
-
-    
     function updateuser($id){
         $user = UsersModels::find($id);
-        return view('superadmin.profile.updateuser',compact('user','id'));
+        return view('direksi.profile.updateuser',compact('user','id'));
     }
     function updateuserData(Request $request,$id){
         $hash=bcrypt($request->input('password'));
@@ -73,6 +68,6 @@ class ProfileSuperAdminControllers extends Controller
             'email'=>$request->input('email'),
             'password'=>$hash,
         ]);
-        return redirect("/profile-super-admin")->with('success','User berhasil diperbarui.');
+        return redirect("/profile-direksi")->with('success','User berhasil diperbarui.');
         }    
 }

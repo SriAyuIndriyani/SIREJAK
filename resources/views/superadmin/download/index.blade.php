@@ -20,7 +20,7 @@
 
                     <tbody>
                         <tr>
-                            <td>Buku</td>
+                            <td style="color: black;">Buku</td>
                             <td>
                                 <select class="custom-select" name="tahun_terbit" id="tahun_terbit">
                                     <option selected>Pilih Tahun</option>
@@ -36,7 +36,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Hibah</td>
+                            <td style="color: black;">Hibah</td>
                             <td>
                                 <select class="custom-select" name="tanggal_hibah" id="tanggal_hibah">
                                     <option selected>Pilih Tahun</option>
@@ -52,7 +52,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Paten/HaKi</td>
+                            <td style="color: black;">Paten/HaKi</td>
                             <td>
                                 <select class="custom-select" name="tanggal_terima" id="tanggal_terima">
                                     <option selected>Pilih Tahun</option>
@@ -68,7 +68,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Penelitian</td>
+                            <td style="color: black;">Penelitian</td>
                             <td>
                                 <select class="custom-select" name="tahun_penelitian" id="tahun_penelitian">
                                     <option selected>Pilih Tahun</option>
@@ -84,7 +84,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Pengabdian</td>
+                            <td style="color: black;">Pengabdian</td>
                             <td>
                                 <select class="custom-select" name="tahun_kegiatan" id="tahun_kegiatan">
                                     <option selected>Pilih Tahun</option>
@@ -100,7 +100,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Publikasi</td>
+                            <td style="color: black;">Publikasi</td>
                             <td>
                                 <select class="custom-select" name="tahun_publikasi" id="tahun_publikasi">
                                     <option selected>Pilih Tahun</option>

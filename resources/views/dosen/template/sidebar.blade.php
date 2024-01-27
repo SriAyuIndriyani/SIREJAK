@@ -40,11 +40,16 @@
                 <a class="collapse-item" href="/form-pengalaman-hibah-dosen">Pengalaman Hibah</a>
                 <a class="collapse-item" href="/form-buku-dosen">Buku</a>
                 <a class="collapse-item" href="/form-patendanHaKi-dosen">Paten/HaKi</a>
-                <a class="collapse-item" href="/unduh-cv">Unduh CV</a>
+                <a class="collapse-item" href="/form-pembicara-dosen">Pembicara</a>
             </div>
         </div>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/unduh-cv" style="color: black">
+            <i class="fas fa-download fa-fw mr-2" style="color: black"></i>
+            <span class="font-weight-bold">Unduh CV</span>
+        </a>
+    </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="modal" data-target="#logoutModal"
             style="color: black">

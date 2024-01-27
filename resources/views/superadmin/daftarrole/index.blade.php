@@ -21,7 +21,7 @@
                     <tbody>
                         @foreach ($role as $item)
                         <tr>
-                            <td>
+                            <td style="color: black;">
                                {{$item->role}}
                             </td>
                             <td>

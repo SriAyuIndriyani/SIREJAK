@@ -6,7 +6,7 @@
             <h1 class="h3 mb-0">Profile Dosen</h1>
             <div class="row">
                 <a class="btn btn-warning btn-sm" href="/update-user/{{ $id }}/updateuser">Edit User</a>
-                <a class="btn btn-warning btn-sm ml-2" href="/biodata-dosen/{{ $biodata->first()->id_biodata }}/update">Edit</a>
+                <a class="btn btn-warning btn-sm ml-2" href="/biodata-dosen/{{ $biodata->first()->id_biodata }}/update">Edit Biodata</a>
             </div>
         </div>
 
@@ -47,6 +47,10 @@
                                 <tr>
                                     <td> Nama</td>
                                     <td>{{ $item->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td> Jabatan Fungsional</td>
+                                    <td>{{ $item->jabfung }}</td>
                                 </tr>
                                 <tr>
                                     <td> NIDN </td>

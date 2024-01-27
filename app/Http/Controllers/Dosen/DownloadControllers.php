@@ -11,6 +11,7 @@ use App\Models\MengajarModels;
 use App\Models\PatenHakiModels;
 use App\Models\PendidikanModels;
 use App\Models\JabatanModels;
+use App\Models\PembicaraModels;
 use App\Models\PenelitianModels;
 use App\Models\PengabdianModels;
 use App\Models\PublikasiModels;
@@ -39,8 +40,9 @@ class DownloadControllers extends Controller
         $hibah = HibahModels::where('id',$AdminId)->get();
         $buku = BukuModels::where('id',$AdminId)->get();
         $patendanhaki = PatenHakiModels::where('id',$AdminId)->get();
+        $pembicara = PembicaraModels::where('id',$AdminId)->get();
         return view("dosen.cv.index", compact('biodata', 'pendidikan', 'jabatan', 'kompetensi', 'mengajar', 
-        'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki'));
+        'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanhaki','pembicara'));
     }
 
     public function downloadPDF(Request $request)
@@ -57,6 +59,7 @@ class DownloadControllers extends Controller
         $selectedHibahIds = $request->input('selected_hibah_ids', []);
         $selectedBukuIds = $request->input('selected_buku_ids', []);
         $selectedPatendanHaKiIds = $request->input('selected_patendanHaKi_ids', []);
+        $selectedPembicara = $request->input('selected_pembicara_ids', []);
 
         $biodata = BiodataModels::whereIn('id_biodata', $selectedBiodataIds)->get();
         // dd($biodata);
@@ -91,12 +94,15 @@ class DownloadControllers extends Controller
         
         // Ambil PatendanHaKiModel menggunakan kolom yang benar (misalnya, 'id_patendanhaki')
         $patendanHaKi = PatenHakiModels::whereIn('id_patendanhaki', $selectedPatendanHaKiIds)->get();
-        // dd($patendanHaKi);
+   
+        // Ambil PatendanHaKiModel menggunakan kolom yang benar (misalnya, 'id_patendanhaki')
+        $pembicara = PembicaraModels::whereIn('id_pembicara', $selectedPembicara)->get();
+   
 
 
         
         $pdf = PDF::loadView('dosen.cv.pdf', compact('biodata', 'pendidikan','jabatan','kompetensi', 'mengajar',
-        'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanHaKi'));
+        'seminardanpelatihan', 'penelitian', 'publikasi', 'pengabdian', 'hibah', 'buku', 'patendanHaKi','pembicara'));
         return $pdf->download('cv.pdf');
     }
 }

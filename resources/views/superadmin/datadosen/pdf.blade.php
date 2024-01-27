@@ -74,7 +74,7 @@
     </div>
     
     <div class="row">
-        @if ($pendidikan->count() > 0 || $jabatan->count() > 0 ||$kompetensi->count() > 0|| $mengajar->count() > 0 || $seminardanpelatihan->count() > 0 || $penelitian->count() > 0 || $publikasi->count() > 0 || $pengabdian->count() > 0 || $hibah->count() > 0 || $buku->count() > 0 || $patendanHaKi->count() > 0)
+        @if ($pendidikan->count() > 0 || $jabatan->count() > 0 ||$kompetensi->count() > 0|| $mengajar->count() > 0 || $seminardanpelatihan->count() > 0 || $penelitian->count() > 0 || $publikasi->count() > 0 || $pengabdian->count() > 0 || $hibah->count() > 0 || $buku->count() > 0 || $patendanHaKi->count() > 0|| $pembicara->count() > 0) 
             <div class="col-12">
                 <table class="table">
                     <tbody>
@@ -94,6 +94,18 @@
                             </tr>
                         @endif
     
+                        @if ($biodata->count() > 0)
+                            <tr>
+                                <td style="font-weight: bold">Jabatan Fungsional</td>
+                                <td>
+                                    @foreach ($biodata as $item)
+                                        <p style="font-weight: bold">{{$item->jabfung}}</p>
+                                        <p></p>
+                                    @endforeach
+                                </td>
+                            </tr>
+                        @endif
+                        
                         @if ($jabatan->count() > 0)
                             <tr>
                                 <td style="font-weight: bold">Pengalaman Jabatan</td>
@@ -139,7 +151,7 @@
                                     <p>{{$item->tema_seminardanpelatihan}}</p>
                                     <p>{{$item->tanggal_seminardanpelatihan->format('d F Y')}}</p>
                                     <p>{{$item->lokasi_seminardanpelatihan}}</p>
-                                    <p>{{$item->penyelenggara}}</p>
+
                                 @endforeach
                             </td>
                         </tr>
@@ -150,11 +162,8 @@
                             <td style="font-weight: bold">Pengalaman Penelitian</td>
                             <td>
                                 @foreach ($penelitian as $item)
-                                    <p>{{$item->judul_penelitian}}</p>
-                                    <p>{{$item->tahun_penelitian}}</p>
-                                    <p>{{$item->lokasi_penelitian}}</p>
-                                    <p>{{$item->sumber_dana}}</p>
-                                    <p>{{$item->nama_pemberi_dana}}</p>
+                                    <p>{{$item->judul_penelitian}}, {{$item->tahun_penelitian->format('d F Y')}}, {{$item->lokasi_penelitian}}, {{$item->sumber_dana}}, {{$item->nama_pemberi_dana}}</p>
+                                    <p style="color: rgb(40, 40, 180); text-decoration: underline">{{$item->link_penelitian}}</p>
                                 @endforeach
                             </td>
                         </tr>
@@ -165,9 +174,8 @@
                             <td style="font-weight: bold">Pengalaman Publikasi</td>
                             <td>
                                 @foreach ($publikasi as $item)
-                                    <p>{{$item->kategori_publikasi}}</p>
-                                    <p>{{$item->nama_publikasi}}</p>
-                                    <p>{{$item->tahun_publikasi->format('d F Y')}}</p>
+                                    <p>{{$item->kategori_publikasi}},{{$item->nama_publikasi}},{{$item->tahun_publikasi->format('d F Y')}}</p>
+                                    <p style="color: rgb(40, 40, 180); text-decoration: underline">{{$item->link_publikasi}}</p>
                                 @endforeach
                             </td>
                         </tr>
@@ -178,22 +186,19 @@
                             <td style="font-weight: bold">Pengalaman Pengabdian</td>
                             <td>
                                 @foreach ($pengabdian as $item)
-                                    <p>{{$item->judul_kegiatan}}</p>
-                                    <p>{{$item->tahun_kegiatan->format('d F Y')}}</p>
-                                    <p>{{$item->lokasi_kegiatan}}</p>
+                                    <p>{{$item->judul_kegiatan}}, {{$item->tahun_kegiatan->format('d F Y')}}, {{$item->lokasi_kegiatan}}</p>
+                                    <p style="color: rgb(40, 40, 180); text-decoration: underline">{{$item->link_pengabdian}}</p>
                                 @endforeach
                             </td>
                         </tr>
                     @endif
-    
+
                     @if ($hibah->count() > 0)
                         <tr>
                             <td style="font-weight: bold">Pengalaman Hibah</td>
                             <td>
                                 @foreach ($hibah as $item)
-                                    <p>{{$item->nama_hibah}}</p>
-                                    <p>{{$item->tanggal_hibah}}</p>
-                                    <p>{{$item->lokasi_hibah}}</p>
+                                    <p>{{$item->nama_hibah}}, {{$item->tanggal_hibah->format('d F Y')}}, {{$item->lokasi_hibah}}</p>
                                 @endforeach
                             </td>
                         </tr>
@@ -204,7 +209,8 @@
                             <td style="font-weight: bold">Buku</td>
                             <td>
                                 @foreach ($buku as $item)
-                                    <p>{{$item->judul}}</p>
+                                    <p>{{$item->judul}} (ISBN : {{$item->isbn}})</p>
+                                    <a style="color: rgb(40, 40, 180); text-decoration: underline">{{$item->link}}</a>
                                 @endforeach
                             </td>
                         </tr>
@@ -215,8 +221,18 @@
                             <td style="font-weight: bold">Paten / HaKi</td>
                             <td>
                                 @foreach ($patendanHaKi as $item)
-                                    <p>{{$item->nama}}</p>
-                                    <p>{{$item->tanggal_terima->format('d F Y')}}</p>
+                                    <p>{{$item->nama}}, {{$item->tanggal_terima->format('d F Y')}}</p>
+                                @endforeach
+                            </td>
+                        </tr>
+                    @endif
+                   
+                    @if ($pembicara->count() > 0)
+                        <tr>
+                            <td style="font-weight: bold">Pembicara</td>
+                            <td>
+                                @foreach ($pembicara as $item)
+                                    <p>{{$item->judul_materi}}, {{$item->tanggal_kegiatan->format('d F Y')}}</p>
                                 @endforeach
                             </td>
                         </tr>

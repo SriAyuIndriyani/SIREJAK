@@ -31,14 +31,14 @@
                     <tbody>
                         @foreach ($prodi as $item)
                         <tr>
-                            <td>
-                               {{$item->prodi}}
+                            <td style="color: black;">
+                                 {{$item->prodi}}
                             </td>
                             <td>
-                                <a class="btn btn-success btn-sm rounded-0">
+                                <a href="/daftar-prodi/update/{{$item->id_prodi}}" class="btn btn-success btn-sm rounded-0">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a class="btn btn-danger btn-sm rounded-0">
+                                <a href="/daftar-prodi/{{$item->id_prodi}}/delete" class="btn btn-danger btn-sm rounded-0">
                                     <i class="fa fa-trash" class="btn btn-danger btn-sm rounded-0"></i>
                                 </a>
                             </td>

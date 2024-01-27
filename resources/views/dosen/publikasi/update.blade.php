@@ -102,6 +102,36 @@
                                     </td>
                                 </tr>
                                 <td>
+                                    Publiser
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="Isi Publiser"
+                                        name="publiser" value="{{$publikasi->publiser}}">
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Status Akreditasi
+                                    </td>
+                                    <td>
+                                        <select class="custom-select" name="status_akreditasi">
+                                            <option selected disabled>Pilih Status</option>
+                                            <option value="Non Sinta" {{$publikasi->status_akreditasi == 'Non Sinta' ? 'selected' : ''}}>Non Sinta</option>
+                                            <option value="Sinta 1" {{$publikasi->status_akreditasi == 'Sinta 1' ? 'selected' : ''}}>Sinta 1</option>
+                                            <option value="Sinta 2" {{$publikasi->status_akreditasi == 'Sinta 2' ? 'selected' : ''}}>Sinta 2</option>
+                                            <option value="Sinta 3" {{$publikasi->status_akreditasi == 'Sinta 3' ? 'selected' : ''}}>Sinta 3</option>
+                                            <option value="Sinta 4" {{$publikasi->status_akreditasi == 'Sinta 4' ? 'selected' : ''}}>Sinta 4</option>
+                                            <option value="Sinta 5" {{$publikasi->status_akreditasi == 'Sinta 5' ? 'selected' : ''}}>Sinta 5</option>
+                                            <option value="Sinta 6" {{$publikasi->status_akreditasi == 'Sinta 6' ? 'selected' : ''}}>Sinta 6</option>
+                                            <option value="Non Q" {{$publikasi->status_akreditasi == 'Non Q' ? 'selected' : ''}}>Non Q</option>
+                                            <option value="Q1" {{$publikasi->status_akreditasi == 'Q1' ? 'selected' : ''}}>Q1</option>
+                                            <option value="Q2" {{$publikasi->status_akreditasi == 'Q2' ? 'selected' : ''}}>Q2</option>
+                                            <option value="Q3" {{$publikasi->status_akreditasi == 'Q3' ? 'selected' : ''}}>Q3</option>
+                                            <option value="Q4" {{$publikasi->status_akreditasi == 'Q4' ? 'selected' : ''}}>Q4</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <td>
                                     Link Publikasi
                                 </td>
                                 <td>
