@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{{asset('/img/polkam.png')}}" type="image/x-icon">
-    <title>SIREJAK - Politeknik Kampar</title>
+    <title>SIPODO - Politeknik Kampar</title>
 
     @include('superadmin.template.css')
 
