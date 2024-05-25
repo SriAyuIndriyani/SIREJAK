@@ -8,7 +8,7 @@
         @auth
         <div class="sidebar-brand-text mx-3 font-weight-bold"
         style="color: black;font-family: Arial, Helvetica, sans-serif; text-align: center">
-    <SPan class="text-white">SIREJAK</SPan>
+    <SPan class="text-white">SISTEM INFORMASI PORTOFOLIO</SPan>
     <br>
     <SPan class="text-white">{{ auth()->user()->name }}</SPan>
     </div>

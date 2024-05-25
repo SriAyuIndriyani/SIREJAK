@@ -27,7 +27,7 @@
 <nav class="navbar" style="background-color: #ff9933;color: white">
     <div class="container justify-content-between">
         <img src="{{asset('/img/logop3m.png')}}" alt="" height="50" width="50">
-  <h5 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">Sistem Informasi Rekam Jejak</h5>
+  <h5 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">Sistem Informasi Portofolio</h5>
         <img src="{{asset('/img/polkam.png')}}" alt="" height="50" width="50">
     </div>
 </nav>
@@ -38,7 +38,7 @@
                 <div class="row">
                         <div class="col-sm-6">
                             <div class="mt-5">
-                                <h1 style="color: black">Selamat Datang Di Sistem Rekam Jejak Tri Dharma Dosen Politeknik Kampar</h1>
+                                <h1 style="color: black">Selamat Datang Di Sistem Informasi Portofolio Dosen Politeknik Kampar</h1>
                             </div>
                             <div class="mt-5">
                                 <span style="color: black">Silahkan Masuk Ke Akun Anda, Jika Belum Memiliki Akun Silahkan Hubungi Pihak P3M</span>
@@ -94,7 +94,7 @@
 
     <nav class="navbar fixed-bottom" style="background-color: #ff9933;color: white">
         <div class="container justify-content-center">
-            <span>2023 | All Right Reserved By SAIY</span>
+            <span>2024 | All Right Reserved By SAIY</span>
           </div>
     </nav>
 
