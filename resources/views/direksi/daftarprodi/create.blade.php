@@ -1,4 +1,4 @@
-@extends('superadmin.template.index')
+@extends('direksi.template.index')
 @section('content')
 <div class="container-fluid">
     <!-- Page Heading -->

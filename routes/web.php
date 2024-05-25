@@ -3,13 +3,14 @@
  * Untuk Form Login
  */
 
+use App\Http\Controllers\Direksi\DaftarPenggunaControllers;
 use App\Http\Controllers\Direksi\DataDosenDireksiControllers;
+use App\Http\Controllers\Direksi\ProdiControllers;
 use App\Http\Controllers\Direksi\ProfileDireksiControllers;
 use App\Http\Controllers\Dosen\DownloadControllers;
 use App\Http\Controllers\Dosen\FormBukuControllers;
 use App\Http\Controllers\Dosen\FormKompetensiDosenControllers;
 use App\Http\Controllers\LoginControllers;
-use App\Http\Controllers\Superadmin\DaftarPenggunaControllers;
 
 /**
  * Untuk Tampilan Dosen
@@ -29,7 +30,6 @@ use App\Http\Controllers\Dosen\FormPublikasiDosenControllers;
 use App\Http\Controllers\Superadmin\DaftarRoleControllers;
 use App\Http\Controllers\Superadmin\DataDosenControllers;
 use App\Http\Controllers\Superadmin\DownloadAllController;
-use App\Http\Controllers\Superadmin\ProdiControllers;
 use App\Http\Controllers\Superadmin\ProfileSuperAdminControllers;
 use Illuminate\Support\Facades\Route;
 
@@ -61,22 +61,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/profile-super-admin', [ProfileSuperAdminControllers::class, 'index']);
         Route::get('/update-user/{id}', [ProfileSuperAdminControllers::class, 'updateuser']);
         Route::put('/update-akun/{id}/updateuserData', [ProfileSuperAdminControllers::class, 'updateuserData']);
-
-        // Untuk Tampilan Daftar Pengguna
-        Route::get('/daftar-pengguna', [DaftarPenggunaControllers::class, 'index']);
-        Route::get('/daftar-pengguna/create', [DaftarPenggunaControllers::class, 'create']);
-        Route::post('/daftar-pengguna/Data', [DaftarPenggunaControllers::class, 'Data']);
-        Route::get('/user/{id}/update', [DaftarPenggunaControllers::class, 'update']);
-        Route::put('/user/{id}/updateData', [DaftarPenggunaControllers::class, 'updateData']);
-        Route::get('/user/{id}/delete', [DaftarPenggunaControllers::class, 'delete']);
-
-        // Untuk Tampilan Daftar Prodi
-        Route::get('/daftar-prodi', [ProdiControllers::class, 'index']);
-        Route::get('/daftar-prodi/create', [ProdiControllers::class, 'create']);
-        Route::post('/daftar-prodi/createData', [ProdiControllers::class, 'createData']);
-        Route::get('/daftar-prodi/update/{id_prodi}', [ProdiControllers::class, 'update']);
-        Route::put('/daftar-prodi/updateData/{id_prodi}', [ProdiControllers::class, 'updateData']);
-        Route::get('/daftar-prodi/{id_prodi}/delete', [ProdiControllers::class, 'delete']);
 
         // Untuk Tampilan data dosen
         Route::get('/data-dosen', [DataDosenControllers::class, 'index']);
@@ -226,6 +210,23 @@ Route::middleware('auth')->group(function () {
         Route::get('/profile-direksi', [ProfileDireksiControllers::class, 'index']);
         Route::get('/update-user-direksi/{id}', [ProfileDireksiControllers::class, 'updateuser']);
         Route::put('/update-akun-direksi/{id}/updateuserData', [ProfileDireksiControllers::class, 'updateuserData']);
+
+         // Untuk Tampilan Daftar Pengguna
+         Route::get('/daftar-pengguna', [DaftarPenggunaControllers::class, 'index']);
+         Route::get('/daftar-pengguna/create', [DaftarPenggunaControllers::class, 'create']);
+         Route::post('/daftar-pengguna/Data', [DaftarPenggunaControllers::class, 'Data']);
+         Route::get('/user/{id}/update', [DaftarPenggunaControllers::class, 'update']);
+         Route::put('/user/{id}/updateData', [DaftarPenggunaControllers::class, 'updateData']);
+         Route::get('/user/{id}/delete', [DaftarPenggunaControllers::class, 'delete']);
+ 
+         // Untuk Tampilan Daftar Prodi
+         Route::get('/daftar-prodi', [ProdiControllers::class, 'index']);
+         Route::get('/daftar-prodi/create', [ProdiControllers::class, 'create']);
+         Route::post('/daftar-prodi/createData', [ProdiControllers::class, 'createData']);
+         Route::get('/daftar-prodi/update/{id_prodi}', [ProdiControllers::class, 'update']);
+         Route::put('/daftar-prodi/updateData/{id_prodi}', [ProdiControllers::class, 'updateData']);
+         Route::get('/daftar-prodi/{id_prodi}/delete', [ProdiControllers::class, 'delete']);
+ 
 
         // Untuk Tampilan data dosen
         Route::get('/data-dosen-direksi', [DataDosenDireksiControllers::class, 'index']);

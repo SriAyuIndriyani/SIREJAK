@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin;
+namespace App\Http\Controllers\Direksi;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProdiModels;
@@ -16,13 +16,13 @@ class DaftarPenggunaControllers extends Controller
             // ->join('tb_prodi','tb_user.id_prodi','=','tb_prodi.id_prodi')
             ->join('tb_role', 'tb_user.id_role', '=', 'tb_role.id_role')
             ->get();
-        return view("superadmin.daftarpengguna.index", compact("join"));
+        return view("direksi.daftarpengguna.index", compact("join"));
     }
     function create()
     {
         $role = RoleModels::all();
         $prodi = ProdiModels::all();
-        return view("superadmin.daftarpengguna.create", compact("role", "prodi"));
+        return view("direksi.daftarpengguna.create", compact("role", "prodi"));
     }
 
     function Data(Request $request)
@@ -40,7 +40,7 @@ class DaftarPenggunaControllers extends Controller
     }
     function update($id){
         $user = UsersModels::find($id);
-        return view('superadmin.daftarpengguna.update',compact('user','id'));
+        return view('direksi.daftarpengguna.update',compact('user','id'));
     }
     function updateData(Request $request,$id){
         $hash=bcrypt($request->input('password'));

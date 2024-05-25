@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin;
+namespace App\Http\Controllers\Direksi;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProdiModels;
@@ -10,11 +10,11 @@ class ProdiControllers extends Controller
 {
     function index () {
         $prodi =ProdiModels::all();
-        return view ("superadmin.daftarprodi.index",compact("prodi"));
+        return view ("direksi.daftarprodi.index",compact("prodi"));
     }
 
     function create(){
-        return view("superadmin.daftarprodi.create");
+        return view("direksi.daftarprodi.create");
     }
 
     function createData (Request $request){
@@ -25,7 +25,7 @@ class ProdiControllers extends Controller
     }
     function update($id_prodi){
         $prodi = ProdiModels::find($id_prodi);
-        return view("superadmin.daftarprodi.update",compact("prodi"));
+        return view("direksi.daftarprodi.update",compact("prodi"));
     }
 
     function updateData (Request $request,$id_prodi){

@@ -13,6 +13,7 @@
     <SPan class="text-white">{{ auth()->user()->name }}</SPan>
     </div>
          @endauth
-        <img src="{{asset('/img/logop3m.png')}}" alt="" height="40" width="40">
+        {{-- <img src="{{asset('/img/logop3m.png')}}" alt="" height="40" width="40"> --}}
+        <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130">
     </div>
 </nav>

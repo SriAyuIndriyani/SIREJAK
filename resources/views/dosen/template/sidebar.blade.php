@@ -4,7 +4,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html"
         style="background-color: #ff9933">
         <div class="sidebar-brand-icon">
-            <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130">
+            {{-- <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130"> --}}
         </div>
     </a>
 

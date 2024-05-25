@@ -8,11 +8,12 @@
         @auth
         <div class="sidebar-brand-text mx-3 font-weight-bold"
         style="color: black;font-family: Arial, Helvetica, sans-serif; text-align: center">
-    <SPan class="text-white">SIREJAK</SPan>
+    <SPan class="text-white">SIDOM</SPan>
     <br>
     <SPan class="text-white">{{ auth()->user()->name }}</SPan>
     </div>
          @endauth
-        <img src="{{asset('/img/logop3m.png')}}" alt="" height="40" width="40">
+        {{-- <img src="{{asset('/img/logop3m.png')}}" alt="" height="40" width="40"> --}}
+        <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130">
     </div>
 </nav>

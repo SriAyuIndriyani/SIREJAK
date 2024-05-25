@@ -4,7 +4,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html"
         style="background-color: #ff9933">
         <div class="sidebar-brand-icon mr-2">
-            <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130">
+            {{-- <img src="{{ asset('/img/real logo polkam.png') }}" alt="" height="40" width="130"> --}}
         </div>
     </a>
 
@@ -18,7 +18,18 @@
             <span class="font-weight-bold">Dashboard</span>
         </a>
     </li>
-   
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/daftar-prodi" style="color: black">
+            <i class="fas fa-university fa-fw mr-2" style="color: black"></i>
+            <span class="font-weight-bold">Data Prodi</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/daftar-pengguna" style="color: black">
+            <i class="fas fa-fw fa-users mr-2" style="color: black"></i>
+            <span class="font-weight-bold">Kelola Dosen</span>
+        </a>
+    </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="/data-dosen-direksi" style="color: black">
             <i class="fas fa-fw fa-search mr-2" style="color: black"></i>
