@@ -31,11 +31,9 @@
         <img src="{{asset('/img/polkam.png')}}" alt="" height="50" width="50">
     </div>
 </nav>
-
-
     <div class="container">
         <div class="col">
-            <div class="col-sm-12">
+            <di class="col-sm-12">
                 <div class="row">
                         <div class="col-sm-6">
                             <div class="mt-5">
@@ -46,13 +44,6 @@
                             </div>
                             <a href="https://drive.google.com/drive/folders/1dZGGZZPiW5gIYtlXKBALdaUWYxomSQCP?usp=sharing" class="btn btn-sm btn-primary">Buku Panduan</a>
                         </div>
-                        <div class="mt-5">
-                            <span style="color: black">Silahkan Masuk Ke Akun Anda, Jika Belum Memiliki Akun Silahkan
-                                Hubungi Pihak P3M</span>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1dZGGZZPiW5gIYtlXKBALdaUWYxomSQCP?usp=sharing"
-                            class="btn btn-sm btn-primary">Buku Panduan</a>
-                    </div>
                     <div class="col-sm-6">
                         <div class="row justify-content-center ">
                             <div class="card o-hidden border-0 shadow-lg my-5">
